@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yash Sonani</title>
+  <meta name="description"
+    content="Yash Sonani: 10+ years in Python, Java, Oracle Cloud, DevOps and AWS. Sr. Oracle Engineer at Brinker International.">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --fg: #1b1d21;
+      --muted: #5f6670;
+      --card: #fff;
+      --line: #e4e4de;
+      --accent: #0b6e6e;
+      --chip: #e8f1f0
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root {
+        --bg: #121416;
+        --fg: #e8e9ea;
+        --muted: #9aa1a9;
+        --card: #1a1d20;
+        --line: #2a2e33;
+        --accent: #5cc5c0;
+        --chip: #1f2c2c
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    header.top {
+      position: sticky;
+      top: 0;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      z-index: 5
+    }
+
+    header.top .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px
+    }
+
+    nav a {
+      margin-left: 18px;
+      color: var(--muted);
+      font-size: .92rem
+    }
+
+    nav a:hover {
+      color: var(--fg);
+      text-decoration: none
+    }
+
+    .hero {
+      padding: 72px 0 40px
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      line-height: 1.1;
+      margin: 0 0 10px;
+      letter-spacing: -.02em
+    }
+
+    .hero .role {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin: 0 0 18px;
+      font-weight: 600
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: var(--muted);
+      margin: 0 0 24px
+    }
+
+    .btns a {
+      display: inline-block;
+      padding: 9px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      margin: 0 10px 10px 0;
+      color: var(--fg);
+      font-weight: 500
+    }
+
+    .btns a.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg)
+    }
+
+    .btns a:hover {
+      text-decoration: none;
+      opacity: .85
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin: 8px 0 8px
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 16px
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--accent)
+    }
+
+    .stat span {
+      font-size: .85rem;
+      color: var(--muted)
+    }
+
+    section {
+      padding: 44px 0;
+      border-top: 1px solid var(--line)
+    }
+
+    h2 {
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+      margin: 0 0 24px
+    }
+
+    .job {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 8px 28px;
+      margin-bottom: 34px
+    }
+
+    .job .when {
+      color: var(--muted);
+      font-size: .9rem;
+      padding-top: 3px
+    }
+
+    .job h3 {
+      margin: 0;
+      font-size: 1.15rem
+    }
+
+    .job .org {
+      color: var(--muted);
+      margin: 0 0 10px;
+      font-size: .95rem
+    }
+
+    .job ul {
+      margin: 0;
+      padding-left: 18px
+    }
+
+    .job li {
+      margin-bottom: 6px
+    }
+
+    .job li::marker {
+      color: var(--accent)
+    }
+
+    details summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-size: .9rem;
+      margin-top: 6px
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px
+    }
+
+    .skill {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px
+    }
+
+    .skill h3 {
+      margin: 0 0 10px;
+      font-size: .95rem
+    }
+
+    .chips span {
+      display: inline-block;
+      background: var(--chip);
+      color: var(--accent);
+      border-radius: 6px;
+      padding: 2px 9px;
+      margin: 0 6px 6px 0;
+      font-size: .82rem
+    }
+
+    .edu {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px
+    }
+
+    footer {
+      padding: 36px 0 56px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    @media(max-width:640px) {
+      .job {
+        grid-template-columns: 1fr
+      }
+
+      nav a:not(:last-child) {
+        display: none
+      }
+    }
+
+    @media print {
+
+      header.top,
+      .btns {
+        display: none
+      }
+
+      body {
+        background: #fff;
+        color: #000
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top">
+    <div class="wrap">
+      <strong>YS</strong>
+      <nav><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a><a
+          href="#contact">Contact</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <h1>Yash Sonani</h1>
+      <p class="role">Sr. Software Developer · Oracle Cloud · AWS · Python · Java · DevOps</p>
+      <p>10+ years building enterprise and middleware applications across food &amp; hospitality, banking, insurance,
+        health, financial services and travel — from Python Automation, Java microservices and AWS infrastructure to
+        CI/CD and Oracle Fusion integrations.</p>
+      <div class="btns">
+        <a class="primary" href="mailto:yash.sonani94@gmail.com">Email me</a>
+        <a href="https://github.com/yash-sonani">GitHub</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>10+</b><span>years in IT</span></div>
+        <div class="stat"><b>6</b><span>different verticals</span></div>
+        <div class="stat"><b>~60%</b><span>faster deployments (DevOps)</span></div>
+        <div class="stat"><b>35%</b><span>cost reduction via AWS microservices</span></div>
+      </div>
+    </div>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="when">Apr 2025 – Present<br>Irving, TX</div>
+        <div>
+          <h3>Sr. Oracle Engineer</h3>
+          <p class="org">Brinker International</p>
+          <ul>
+            <li>Built and enhanced HR and payroll integrations, reducing process time from 3–4 hours to 5 minutes
+              (~<b>97%</b> faster).</li>
+            <li>Set up proactive monitoring for <b>ATP, OIC agents, and Oracle SaaS</b>, with automated alerts and
+              ServiceNow ticket creation that include diagnostic details, so problems are caught earlier.</li>
+            <li>Delivered compliance and partner integrations, including the <b>EY WOTC</b>(Work Opportunity Tax Credit)
+              integration, <b>ACA reporting</b>, and with <b>ServiceNow</b>.</li>
+            <li>Optimized the Minimum Wage Increase process, cutting runtime from 16–22 hours to 3–4 hours (roughly
+              <b>80% faster</b>) and reducing errors.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Aug 2022 – Apr 2025<br>Plano, TX</div>
+        <div>
+          <h3>Software Developer</h3>
+          <p class="org">Yum! Brands, Inc.</p>
+          <ul>
+            <li>Migrated <b>ADF Web Services</b> from Java Compute Cloud to <b>Oracle WebLogic Server</b>.</li>
+            <li>Built <b>Oracle Integration Cloud</b> (OIC) integrations: FTP, SOAP, REST, SaaS/PaaS, on-prem and
+              third-party apps with Oracle Cloud.</li>
+            <li>Managed <b>Oracle Database</b> operations: monitoring, backups, patching; wrote shell scripts and
+              <b>CRON</b> health checks for Oracle DBaaS.
+            </li>
+            <li>Designed custom reports in <b>Oracle BI Publisher</b>, <b>OTBI</b> and <b>SSRS</b>.</li>
+            <li>Built <b>Oracle Digital Assistant</b> chatbots with multi-intent support; extended SaaS pages with
+              <b>Visual Builder Cloud Service</b> (VBCS).
+            </li>
+            <li>Wrote and tuned <b>SQL</b>, <b>PL/SQL</b> and <b>fast formulas</b>; domain depth in <b>HCM</b> (Talent
+              Management, Compensation, Global HR, Payroll).</li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div class="job">
+        <div class="when">Feb 2020 – Jul 2022<br>Denver, CO</div>
+        <div>
+          <h3>DevOps Engineer</h3>
+          <p class="org">Tata Consultancy Services</p>
+          <ul>
+            <li>Built and maintained CI/CD pipelines with <b>Jenkins, Ansible, Docker, Kubernetes</b> and <b>GitHub
+                Actions</b>, covering applications across 5,000 servers (build, deploy, test, release).</li>
+            <li>Cut deployment effort by <b>40%</b> and deployment time by about <b>60%</b>.</li>
+            <li>Added smoke and regression test scripts to the pipeline; integrated <b>ServiceNow</b> to meet
+              code-migration policy.</li>
+            <li>Set up <b>InfluxDB + Grafana</b> for monitoring and analysis.</li>
+            <li>Used <b>Nexus</b> and <b>ECR</b> for Maven builds; handled kernel patching and performance tuning on
+              Windows/Linux.</li>
+            <li>Ran a live-like environment for reproducing production issues, plus geographically distributed
+              stress-test servers for each release.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">Mar 2019 – Jan 2020<br>Mumbai, India</div>
+        <div>
+          <h3>Cloud Developer</h3>
+          <p class="org">Tata Consultancy Services</p>
+          <ul>
+            <li>Designed cloud architecture and provisioned <b>AWS</b> infrastructure with <b>CloudFormation</b> and
+              <b>Lambda</b> (Python, Node.js).
+            </li>
+            <li>Built CI/CD on <b>CodePipeline, CodeCommit, CodeBuild, CodeDeploy</b>: ~30% better deployment process
+              and time.</li>
+            <li>Deployed <b>microservices</b> on EC2, ECR, ECS, ELB and API Gateway, reducing operating costs by up to
+              <b>35%</b>.
+            </li>
+            <li>Designed decoupled, scalable apps with SNS, SQS, Step Functions and Kinesis; used ElastiCache to speed
+              up REST services.</li>
+            <li>Configured RDS, DynamoDB, S3/Glacier, EFS; monitored with CloudWatch, Config, CloudTrail, Athena,
+              GuardDuty; managed IAM and AWS Organizations.</li>
+            <li>Wrote Lambda functions to start/stop environments and save billing cost.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">Oct 2017 – Feb 2019<br>Mumbai, India</div>
+        <div>
+          <h3>Java Developer</h3>
+          <p class="org">Tata Consultancy Services</p>
+          <ul>
+            <li>Decomposed a legacy monolith into <b>Spring Boot microservices</b>, improving response time to 2–5
+              seconds.</li>
+            <li>Built RESTful services (JSON) with <b>Spring Boot</b>; persistence with <b>JDBC, JPA, Hibernate</b>;
+              caching with <b>Ehcache</b>.</li>
+            <li>CI/CD with <b>Maven, Jenkins, Ansible, JUnit</b>; hosted on Tomcat/WebLogic on Linux, AWS ECS and
+              Kubernetes.</li>
+            <li>Improved throughput with multithreading, collections and design patterns; practiced <b>TDD/BDD</b> with
+              Jira and Confluence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">Sep 2016 – Sep 2017<br>Mumbai, India</div>
+        <div>
+          <h3>Back End Developer</h3>
+          <p class="org">Tata Consultancy Services</p>
+          <ul>
+            <li>Developed <b>PL/SQL</b> packages, procedures, triggers and functions; used bulk collections to cut
+              SQL/PL/SQL context switching.</li>
+            <li>Optimized legacy queries by 15–20%; loaded data with <b>SQL*Loader</b>.</li>
+            <li>Replicated data with <b>GoldenGate</b> and Oracle Streams; built Oracle Forms &amp; Reports (50
+              reports).</li>
+            <li>Automated repetitive database processes and fixed production issues.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">
+          <h3>Languages &amp; Frameworks</h3>
+          <div class="chips">
+            <span>Python</span><span>Java</span><span>Node.js</span><span>SQL</span><span>PL/SQL</span><span>Shell</span><span>PowerShell</span>
+            <span>Spring Boot</span>
+            
+          </div>
+        </div>
+        <div class="skill">
+          <h3>Oracle Cloud</h3>
+          <div class="chips"><span>OIC</span><span>VBCS</span><span>Database</span><span>Digital Assistant</span><span>BI
+              Publisher</span><span>OTBI</span><span>WebLogic</span><span>ADF</span><span>HCM</span><span>GoldenGate</span></div>
+        </div>
+        <div class="skill">
+          <h3>AWS Cloud</h3>
+          <div class="chips"><span>EC2</span><span>ECS</span><span>Lambda</span><span>CloudFormation</span><span>API
+              Gateway</span><span>RDS</span><span>DynamoDB</span><span>S3</span><span>SNS/SQS</span><span>CloudWatch</span><span>IAM</span>
+          </div>
+        </div>
+        <div class="skill">
+          <h3>DevOps &amp; Tooling</h3>
+          <div class="chips"><span>Jenkins</span><span>GitHub
+              Actions</span><span>Ansible</span><span>Docker</span><span>Kubernetes</span><span>Maven</span><span>Nexus</span><span>Grafana</span><span>InfluxDB</span><span>ServiceNow</span>
+          </div>
+        </div>
+        <div class="skill">
+          <h3>Practices</h3>
+          <div class="chips">
+            <span>Agile</span><span>Scrum</span><span>TDD</span><span>BDD</span><span>JUnit</span><span>Postman</span><span>SoapUI</span><span>Swagger</span><span>Git</span><span>Bitbucket</span><span>Jira</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="edu">
+        <div><b>Bachelor's in Computer Engineering</b><br><span style="color:var(--muted)">Birla Vishwakarma
+            Mahavidyalaya, Anand, India</span></div>
+        <div style="color:var(--muted)">2012 – 2016</div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div>Get in touch: <a href="mailto:yash.sonani94@gmail.com">yash.sonani94@gmail.com</a> · <a
+          href="https://github.com/yash-sonani">github.com/yash-sonani</a></div>
+      <div style="margin-top:6px">© <span id="y"></span> Yash Sonani</div>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
+
+</html>
